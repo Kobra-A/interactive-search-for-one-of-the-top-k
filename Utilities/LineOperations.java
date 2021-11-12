@@ -7,10 +7,10 @@ import java.util.Comparator;
 import Models.Point;
 
 public class LineOperations {
+    // Compute the interactions between t and l_i and save it in HashMap(Point,Interaction)
     public static Point getInteraction(float slope, float intercept, float utilityLine) {
         return new Point(utilityLine, (slope) * utilityLine + intercept);
     }
-
     public static ArrayList<Point> getOrderedInteractions(ArrayList<Point> points, float utilityLine) {
         ArrayList<Point> Interactions = new ArrayList<Point>();
         for (Point point : points) {
