@@ -7,14 +7,14 @@ import java.util.Comparator;
 import Models.Point;
 
 public class LineOperations {
-    public static Point getIntersection(float slope, float intercept, float partition) {
-        return new Point(partition, (slope) * partition + intercept);
+    public static Point getIntersection(float slope, float intercept, float utilityLine) {
+        return new Point(utilityLine, (slope) * utilityLine + intercept);
     }
 
-    public static ArrayList<Point> getOrderedIntersections(ArrayList<Point> points, float partition) {
+    public static ArrayList<Point> getOrderedIntersections(ArrayList<Point> points, float utilityLine) {
         ArrayList<Point> intersections = new ArrayList<Point>();
         for (Point point : points) {
-            intersections.add(LineOperations.getIntersection(point.x - point.y, point.y, partition));
+            intersections.add(LineOperations.getIntersection(point.x - point.y, point.y, utilityLine));
         }
         Collections.sort(intersections, new Comparator<Point>() {
             @Override
