@@ -20,7 +20,9 @@ public class LineOperations {
         for (Point point : points) {
             Interactions.put(point, LineOperations.getInteraction(point.x - point.y, point.y, utilityLine));
         }
-        sortByValue(Interactions);
+        
+        HashMap<Point,Point> SortedInteractions = new HashMap<Point,Point>();
+        SortedInteractions.putAll(sortByValue(Interactions));
  
         return Interactions;
     }
